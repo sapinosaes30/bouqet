@@ -1,0 +1,87 @@
+:root {
+  color-scheme: dark;
+  background: #000;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* { box-sizing: border-box; }
+html, body, #experience {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #000;
+}
+body { overscroll-behavior: none; }
+#experience {
+  position: fixed;
+  inset: 0;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 48% 48%, rgba(82, 18, 51, .12), transparent 38%),
+    radial-gradient(ellipse at 19% 57%, rgba(25, 34, 88, .095), transparent 34%),
+    radial-gradient(ellipse at 82% 39%, rgba(105, 48, 24, .075), transparent 34%),
+    #000;
+  touch-action: pan-y;
+}
+#artwork {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  touch-action: manipulation;
+}
+#dedication {
+  position: absolute;
+  z-index: 2;
+  top: 17%;
+  left: 50%;
+  width: min(88vw, 620px);
+  transform: translate(-50%, 8px);
+  opacity: 0;
+  pointer-events: none;
+  text-align: center;
+  color: rgba(255, 224, 239, .94);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(25px, 5vw, 40px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: .025em;
+  text-shadow: 0 0 22px rgba(242, 134, 187, .22), 0 0 48px rgba(137, 75, 157, .16);
+  transition: opacity 1.25s ease, transform 1.8s cubic-bezier(.2,.7,.2,1);
+  will-change: opacity, transform;
+}
+#dedication.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+#dedication.gone {
+  opacity: 0;
+  transform: translate(-50%, -7px);
+}
+#fallback {
+  position: absolute;
+  inset: 0;
+  background: #000;
+}
+@media (max-height: 650px) {
+  #dedication { top: 9%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #dedication { transition-duration: .01ms; }
+}
+
+.fallback-bouquet {
+  position: absolute; inset: 0; display: grid; place-content: center; text-align: center;
+  color: #f3b0cf; font: 600 clamp(22px, 6vw, 46px)/1.5 monospace;
+  text-shadow: 0 0 18px rgba(232, 130, 190, .3);
+}
+.fallback-flowers { color: #e8a2c2; }
+.fallback-stems { color: #79a982; font-size: .78em; letter-spacing: .35em; }

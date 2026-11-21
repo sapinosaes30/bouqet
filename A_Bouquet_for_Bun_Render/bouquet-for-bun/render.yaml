@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: a-bouquet-for-bun
+    runtime: static
+    staticPublishPath: .
+    autoDeployTrigger: commit
