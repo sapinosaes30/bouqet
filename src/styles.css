@@ -1,0 +1,30 @@
+:root {
+  color-scheme: dark;
+  background: #202736;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #202736;
+}
+
+body {
+  position: fixed;
+  inset: 0;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#bouquet {
+  display: block;
+  width: 100vw;
+  height: 100dvh;
+  background: #202736;
+  touch-action: none;
+}

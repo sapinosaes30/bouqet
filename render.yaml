@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: bouquet-for-bun
+    runtime: static
+    staticPublishPath: .
